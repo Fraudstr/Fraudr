@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Fraudr\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
