@@ -2,8 +2,8 @@
 
 namespace Fraudr\Http\Controllers\Auth;
 
-use Fraudr\Models\User;
 use Fraudr\Http\Controllers\Controller;
+use Fraudr\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
