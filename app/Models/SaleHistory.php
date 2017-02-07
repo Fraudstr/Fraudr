@@ -6,7 +6,14 @@ use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int $credits
+ * @property integer  id          guarded
+ * @property integer  user_id     hidden
+ * @property User     user
+ * @property integer  sale_id     hidden
+ * @property Sale     sale
+ * @property integer  credits
+ * @property mixed    created_at  hidden
+ * @property mixed    updated_at  hidden
  */
 class SaleHistory extends Model
 {

@@ -8,8 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @property integer  id          guarded
- * @property string   message
- * @property string   filename
+ * @property string   nickname
+ * @property string   email
+ * @property string   password
+ * @property integer  credits
+ * @property string   remember_token hidden
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
  */

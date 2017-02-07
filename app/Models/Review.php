@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property integer  id          guarded
+ * @property integer  user_id     hidden
+ * @property User     user
+ * @property integer  offer_id    hidden
+ * @property Offer    offer
  * @property string   title
- * @property string   description
- * @property integer  bounty
- * @property mixed    closes_at
- * @property mixed    deleted_at  hidden
+ * @property string   body
+ * @property integer  rating
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
  */

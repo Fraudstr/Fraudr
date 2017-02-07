@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * @property int $credits
- * @property double $price
+ * @property integer  id          guarded
+ * @property integer  user_id     hidden
+ * @property User     user
+ * @property integer  credits
+ * @property double   price
+ * @property mixed    created_at  hidden
+ * @property mixed    updated_at  hidden
  */
 class Sale extends Model
 {
