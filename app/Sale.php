@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property integer  id          guarded
  * @property integer  user_id     hidden
  * @property User     user
- * @property integer  sale_id     hidden
- * @property Sale     sale
  * @property integer  credits
+ * @property double   price
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
  */
-class SaleHistory extends Model
+class Sale extends Model
 {
-    use HasTimestamps;
+    use HasTimestamps, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -25,7 +25,7 @@ class SaleHistory extends Model
      * @var array
      */
     protected $fillable = [
-        'credits'
+        'price', 'credits'
     ];
 
     /**

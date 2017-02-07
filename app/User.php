@@ -1,25 +1,24 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @property integer  id          guarded
- * @property boolean  accepted
- * @property boolean  filled
- * @property integer  user_id     hidden
- * @property User     user
- * @property integer  offer_id    hidden
- * @property Offer    offer
- * @property string   filename
+ * @property string   nickname
+ * @property string   email
+ * @property string   password
+ * @property integer  credits
+ * @property string   remember_token hidden
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
  */
-class Message extends Model
+class User extends Authenticatable
 {
-    use HasTimestamps;
+    use Notifiable, HasTimestamps;
 
     /**
      * The attributes that are mass assignable.
@@ -27,7 +26,7 @@ class Message extends Model
      * @var array
      */
     protected $fillable = [
-        'accepted', 'filled'
+        'name', 'email', 'password', 'credits'
     ];
 
     /**

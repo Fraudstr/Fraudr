@@ -1,24 +1,26 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property integer  id          guarded
- * @property string   nickname
- * @property string   email
- * @property string   password
- * @property integer  credits
- * @property string   remember_token hidden
+ * @property integer  user_id     hidden
+ * @property User     user
+ * @property integer  offer_id    hidden
+ * @property Offer    offer
+ * @property string   title
+ * @property string   body
+ * @property integer  rating
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
  */
-class User extends Authenticatable
+class Review extends Model
 {
-    use Notifiable, HasTimestamps;
+    use HasTimestamps, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'message', 'filename'
+        'title', 'description', 'bounty', 'closes_at'
     ];
 
     /**

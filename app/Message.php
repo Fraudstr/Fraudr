@@ -1,26 +1,25 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property integer  id          guarded
+ * @property boolean  accepted
+ * @property boolean  filled
  * @property integer  user_id     hidden
  * @property User     user
- * @property string   title
- * @property string   description
- * @property integer  bounty
- * @property \DateTime closes_at
+ * @property integer  offer_id    hidden
+ * @property Offer    offer
+ * @property string   filename
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
- * @property mixed    deleted_at  hidden
  */
-class Job extends Model
+class Message extends Model
 {
-    use HasTimestamps, SoftDeletes;
+    use HasTimestamps;
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +27,7 @@ class Job extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'bounty', 'closes_at'
+        'accepted', 'filled'
     ];
 
     /**
