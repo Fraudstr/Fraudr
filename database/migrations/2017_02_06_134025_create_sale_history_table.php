@@ -19,6 +19,7 @@ class CreateSaleHistoryTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('sale_id')->unsigned();
 
+            $table->integer('credits');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

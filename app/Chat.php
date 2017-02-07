@@ -3,19 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer  id          guarded
- * @property string   message
- * @property string   filename
+ * @property boolean  accepted
+ * @property boolean  filled
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
  */
-class User extends Authenticatable
+class Chat extends Model
 {
-    use Notifiable, HasTimestamps;
+    use HasTimestamps;
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'message', 'filename'
+        'accepted', 'filled'
     ];
 
     /**
