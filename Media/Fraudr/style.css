@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.screen_wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #ececec;
+}
+
+.login_wrap {
+  font-family: 'Montserrat';
+  width: 500px;
+  height: 300px;
+  z-index: 2;
+  position: relative;
+  left: calc(50% - 250px);
+  top: calc(50% - 150px);
+  background-color: #fff;
+  -webkit-box-shadow: 3px 5px 18px 2px rgba(0,0,0,0.32);
+  -moz-box-shadow: 3px 5px 18px 2px rgba(0,0,0,0.32);
+  box-shadow: 3px 5px 18px 2px rgba(0,0,0,0.32);
+}
+
+.login_wrap h2 {
+  margin: 0;
+  padding: 20px 0 0;
+  text-align: center;
+  color: #0f005d;
+  font-size: 30px;
+}
+
+.login_wrap p {
+  margin: 0;
+  padding: 30px 0;
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+}
+
+.login_box {
+  background-color: #fff;
+width: 70%;
+height: 40px;
+padding: 0 10px;
+margin: 0 15% 10px;
+border: 4px solid #0f005d;
+box-sizing: border-box;
+font-size: 18px;
+font-family: 'Montserrat';
+font-weight: Bold;
+color: #333;
+text-align: center;
+}
+
+.transition {
+  transition: border 0.2s;
+}
+
+.login_box:focus {
+  border-bottom: 10px solid #0f005d;
+}
+
+.login_wrap .login_submit {
+  width: 100px;
+  height: 40px;
+  background-color: #fff;
+  border: 4px solid #0f005d;
+  color: #333;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  margin-left: calc(50% - 50px);
+  cursor: pointer;
+}
+
+.login_wrap .login_submit:hover {
+  border-bottom: 10px solid #0f005d;
+}
