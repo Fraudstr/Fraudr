@@ -1,0 +1,71 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #eeeeee;
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url(Lato-Light.ttf);
+}
+
+@keyframes upHeader {
+    0% {top: 60px; opacity: 0;}
+    100% {top: 40px; opacity: 1;}
+}
+
+nav {
+    position: relative;
+    width: 95%;
+    height: 100px;
+    background: #f6f6f6;
+    top: 40px;
+    box-shadow: 0px 2px 2px 0px #b0b0b0;
+    margin: auto;
+    animation-name: upHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.4s;
+}
+
+.logonav {
+    float: left;
+    margin-left: 40px;
+    transform: translateY(50%);
+    width: auto;
+    height: 50px;
+}
+
+.search-wrap {
+    border-radius: 2px;
+    overflow: hidden;
+    height: 30px;
+    position: relative;
+    background: #dddddd;
+    border: 1px solid #767676;
+    top: 35px;
+    width: 285px;
+    float: right;
+    right: 40px;
+}
+
+.search-bar {
+    position: relative;
+    background: #dddddd;
+    border: 0px solid #767676;
+    height: 30px;
+    padding-right: 5px;
+    float: left;
+    width: 245px;
+    font-family: 'LatoLight';
+}
+
+.magnify-glass {
+    width: 29px;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    padding-left: 2px;
+}

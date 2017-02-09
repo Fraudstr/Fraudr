@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-Route::get('/', 'HomeController@index');
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'index']);
+
+Route::group(['prefix' => 'jobs', 'as' => 'job.'], function() {
+    Route::get('/',  ['uses' => 'JobController@list',       'as' => 'list']);
+    Route::get('/create',  ['uses' => 'JobController@createForm', 'as' => 'createForm']);
+    Route::post('/create', ['uses' => 'JobController@create',     'as' => 'create']);
+});
