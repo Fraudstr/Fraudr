@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -44,7 +45,10 @@
                 @if (!Auth::guest())
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;<li class="dropdown">
+                        <li>
+                            <a href="#">{{ Auth::user()->credits }} credits</a>
+                        </li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Jobs <span class="caret"></span>
                             </a>
@@ -65,6 +69,8 @@
                     <!-- Authentication Links -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <img class="special-img" src="{{ Auth::user()->getAvatar() }}">
+
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

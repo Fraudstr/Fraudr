@@ -37,4 +37,9 @@ class User extends Authenticatable
     protected $hidden = [
 
     ];
+
+    public function getAvatar()
+    {
+        return app('avatar')->create($this->name)->toBase64();
+    }
 }

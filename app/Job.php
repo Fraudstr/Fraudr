@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string   title
  * @property string   description
  * @property integer  bounty
+ * @property string   tags
  * @property \DateTime closes_at
  * @property mixed    created_at  hidden
  * @property mixed    updated_at  hidden
@@ -28,7 +29,7 @@ class Job extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'bounty', 'closes_at'
+        'title', 'description', 'bounty', 'closes_at', 'tags'
     ];
 
     /**
