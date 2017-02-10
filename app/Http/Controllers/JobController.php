@@ -23,7 +23,7 @@ class JobController extends Controller
     public function list(Request $request)
     {
         $search = $request->search;
-        $jobs = Job::with('user')->orderBy('updated_at', 'desc')->paginate(15);
+        $jobs = Job::with('user')->where('closes_at', '>=', Carbon::now())->orderBy('updated_at', 'desc')->paginate(15);
         return view('job.list', compact('jobs', 'search'));
     }
 

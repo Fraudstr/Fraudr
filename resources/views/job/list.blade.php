@@ -18,17 +18,15 @@
                                 <h4 class="list-group-item-heading">
                                     <img class="special-img" src="{{ $job->user->getAvatar() }}">
                                     {{ str_limit($job->title, $limit = 80, $end = '...') }}
-                                    &nbsp;<span class="text-muted pull-right">deadline {{ $job->closes_at }}, {{ $job->bounty }} credits</span>
+                                    &nbsp;<span class="text-muted pull-right">deadline {{ $job->deadline() }}, {{ $job->bounty }} credits</span>
                                 </h4>
+                                <hr style="padding:0;margin:0;">
                                 <p class="list-group-item-text">
                                     {{ str_limit($job->description, $limit = 420, $end = '...') }}
                                 </p>
                             </a>
                         @endforeach
-                        <hr>
-
                         {{ $jobs->appends(['search' => $search])->links() }}
-
                     </div>
                 </div>
             </div>

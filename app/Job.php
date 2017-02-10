@@ -46,6 +46,11 @@ class Job extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function deadline()
+    {
+        return array_first(explode(' ', $this->closes_at));
+    }
+
     protected function getDateFormat()
     {
         return 'Y/m/d';

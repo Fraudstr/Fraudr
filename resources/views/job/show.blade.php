@@ -10,7 +10,20 @@
                     </div>
 
                     <div class="panel-body">
-                        Some bullshit
+                        <h4>Description</h4>
+                        <p>
+                            {{ $job->description }}
+                            <br><br>
+                            <b>Bounty:</b> {{ $job->bounty }} credits<br>
+                            <b>Deadline:</b> {{ $job->deadline() }}
+
+                            @if(Auth::user()->id == $job->user_id)
+
+                            @else
+                                <form
+                            @endif
+
+                        </p>
                     </div>
                 </div>
             </div>
