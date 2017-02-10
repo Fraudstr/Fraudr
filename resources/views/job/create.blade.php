@@ -24,13 +24,40 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('bounty') ? ' has-error' : '' }}">
+                                <label for="bounty" class="col-md-4 control-label">Bounty</label>
+
+                                <div class="col-md-6">
+                                    <input id="bounty" type="number" min="1" max="{{ Auth::user()->credits }}" class="form-control" name="bounty" value="{{ old('bounty') ?: 1 }}" required autofocus>
+
+                                    @if ($errors->has('bounty'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('bounty') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('closes_at') ? ' has-error' : '' }}">
+                                <label for="closes_at" class="col-md-4 control-label">Deadline</label>
+
+                                <div class="col-md-6">
+                                    <div class="input-group date">
+                                        <input id="closes_at" type="text" class="form-control" name="closes_at" value="{{ old('closes_at') }}" required autofocus><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                    </div>
+                                    @if ($errors->has('closes_at'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('closes_at') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                                 <label for="description" class="col-md-4 control-label">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" placeholder="Lorum ipsum..." name="description" required autofocus class="form-control" rows="3">
-                                        {{ old('description') }}
-                                    </textarea>
+                                    <textarea id="description" placeholder="Lorum ipsum..." name="description" required autofocus class="form-control" rows="5">{{ old('description') }}</textarea>
 
                                     @if ($errors->has('description'))
                                         <span class="help-block">

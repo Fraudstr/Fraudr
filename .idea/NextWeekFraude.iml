@@ -258,5 +258,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="bootstrap-datepicker" level="application" />
   </component>
 </module>

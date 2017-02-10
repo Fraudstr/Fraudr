@@ -5,6 +5,7 @@ namespace Fraudr;
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Validation\Concerns\ValidatesAttributes;
 
 /**
  * @property integer  id          guarded
@@ -20,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Job extends Model
 {
-    use HasTimestamps, SoftDeletes;
+    use HasTimestamps, SoftDeletes, ValidatesAttributes;
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +29,7 @@ class Job extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'bounty', 'closes_at'
+        'title', 'description', 'bounty', 'closes_at', 'user_id'
     ];
 
     /**
@@ -43,5 +44,10 @@ class Job extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected function getDateFormat()
+    {
+        return 'Y/m/d';
     }
 }
