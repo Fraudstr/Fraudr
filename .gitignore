@@ -1,3 +1,4 @@
+*.rdb
 .*.meta.php
 /_ide_helper.php
 /public/storage
