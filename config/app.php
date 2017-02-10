@@ -178,7 +178,7 @@ return [
         // Fraudr\Providers\BroadcastServiceProvider::class,
         Fraudr\Providers\EventServiceProvider::class,
         Fraudr\Providers\RouteServiceProvider::class,
-
+        Fraudr\Providers\ValidatorServiceProvider::class,
     ],
 
     /*

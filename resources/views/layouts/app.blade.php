@@ -46,7 +46,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="#">{{ Auth::user()->credits }} credits</a>
+                            <a href="#">({{ Auth::user()->credits }} credits)</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -58,7 +58,7 @@
                                     <a href="{{ route('job.list') }}">List</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('job.createForm') }}">New</a>
+                                    <a href="{{ route('job.create') }}">New</a>
                                 </li>
                             </ul>
                         </li>

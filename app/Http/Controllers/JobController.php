@@ -3,6 +3,9 @@
 namespace Fraudr\Http\Controllers;
 
 
+use Fraudr\Job;
+use Illuminate\Http\Request;
+
 class JobController extends Controller
 {
     /**
@@ -13,12 +16,14 @@ class JobController extends Controller
         $this->middleware('auth');
     }
 
-    public function list()
+    public function list(Request $request)
     {
-        return view('job.list');
+        $search = $request->search;
+        $jobs = Job::with('user')->orderBy('updated_at', 'desc')->paginate(15);
+        return view('job.list', compact('jobs', 'search'));
     }
 
-    public function createForm()
+    public function show(Job $job)
     {
 
     }
@@ -26,5 +31,10 @@ class JobController extends Controller
     public function create()
     {
 
+    }
+
+    public function showCreateForm()
+    {
+        return view('job.create');
     }
 }
